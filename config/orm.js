@@ -1,7 +1,7 @@
 const connection = require("../config/connection.js");
 
 const orm = {
-    selectAll: function(table, cb){
+    all: function(table, cb){
         let query = "WHERE * FROM ??";
         connection.query(query, [table], function(err, res){
             if (err) throw err;
@@ -9,7 +9,7 @@ const orm = {
         })
     },
 
-    insertOne: function(table, col, val, cb){
+    insert: function(table, col, val, cb){
         let query = "INSERT INTO ?? (??) VALUES (??)";
         connection.query(query, [table, col, val], function(err, res){
             if (err) throw err;
@@ -17,9 +17,17 @@ const orm = {
         })
     },
     
-    updateOne: function(table, col, val1, id, cb){
+    update: function(table, col, val1, id, cb){
         let query = "UPDATE ?? SET ?? = ?? WHERE ?? = ?";
         connection.query(query, [table, col, val1, id], function(err, res){
+            if (err) throw err;
+            cb(res);
+        })
+    },
+
+    delete: function(table, id, cb){
+        let query = "DELETE FROM ?? WHERE ?? = ?";
+        connection.query(query, [table, id], function(err, res){
             if (err) throw err;
             cb(res);
         })
