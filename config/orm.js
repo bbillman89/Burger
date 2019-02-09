@@ -2,7 +2,7 @@ const connection = require("../config/connection.js");
 
 const orm = {
     all: function(table, cb){
-        let query = "WHERE * FROM ??";
+        let query = "SELECT * FROM ??";
         connection.query(query, [table], function(err, res){
             if (err) throw err;
             cb(res);
