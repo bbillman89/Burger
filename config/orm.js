@@ -119,6 +119,7 @@ function printQuestionMarks(num) {
         cb(result);
       });
     },
+    /*
     delete: function(table, condition, cb) {
       var queryString = "DELETE FROM " + table;
       queryString += " WHERE ";
@@ -131,7 +132,7 @@ function printQuestionMarks(num) {
   
         cb(result);
       });
-    }
+    }*/
   };
 
 module.exports = orm;
