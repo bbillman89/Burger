@@ -8,7 +8,7 @@ const Burger = {
         });
     },
     
-    insert: function(col, val, cb){
+    create: function(col, val, cb){
         orm.create("burgers", col, val, function(res) {
             cb(res);
             console.log(res);
@@ -21,13 +21,13 @@ const Burger = {
             console.log(res);
         })
     },
-    
+    /*
     delete: function(id, cb){
         orm.delete("burgers", id, function(res){
             cb(res);
             console.log(res);
         })
-    }
+    }*/
 }
 
 module.exports = Burger;
