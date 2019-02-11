@@ -1,6 +1,6 @@
 const connection = require("../config/connection.js");
 
-const orm = {
+/*const orm = {
     all: function(table, cb){
         let query = "SELECT * FROM ??";
         connection.query(query, [table], function(err, res){
@@ -33,9 +33,7 @@ const orm = {
             cb(res);
         })
     }
-}
-
-/*
+}*/
 
 /////============ TESTING ORM.JS FROM CATSAPP ===========//////
 
@@ -116,7 +114,5 @@ var orm = {
     });
   },
 };
-*/
-
 
 module.exports = orm;
