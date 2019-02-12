@@ -1,4 +1,4 @@
-const connection = require("../config/connection.js");
+let connection = require("../config/connection.js");
 
 /*const orm = {
     all: function(table, cb){
